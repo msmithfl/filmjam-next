@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "filmjam.io",
   description: "Filmjam is a platform for online film festivals.",
   icons: {
-    icon: "",
+    icon: "/assets/images/logo.svg",
   },
 };
 

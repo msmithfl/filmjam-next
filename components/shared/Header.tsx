@@ -10,12 +10,7 @@ const Header = () => {
     <header className="w-full border-b">
       <div className="wrapper flex items-center justify-between">
         <Link href="/" className="w-36">
-          <Image
-            src="/assets/images/logo.svg"
-            width={128}
-            height={38}
-            alt="Evently logo"
-          />
+          <h1 className="text-2xl font-bold">filmjam.io</h1>
         </Link>
 
         <div className="flex w-32 justify-end gap-3">
