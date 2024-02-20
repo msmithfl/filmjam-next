@@ -23,7 +23,7 @@ export const headerLinksSignedOut = [
     route: "/watch",
   },
   {
-    label: "Films Jams",
+    label: "Film Jams",
     route: "/jams",
   },
   {
