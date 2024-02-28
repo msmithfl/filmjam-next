@@ -13,7 +13,7 @@ export const connectToDatabase = async () => {
   // checking if cache is already connected
   if (cached.conn) return cached.conn;
 
-  if (!MONGODB_URI) throw new Error("MONDODB_URI is missing!");
+  if (!MONGODB_URI) throw new Error("MONGODB_URI is missing!");
 
   // set the promise to the existing cached connection or create a new connection
   cached.promise =

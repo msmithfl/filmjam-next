@@ -1,13 +1,9 @@
 import { Webhook } from "svix";
 import { headers } from "next/headers";
 import { WebhookEvent } from "@clerk/nextjs/server";
-import {
-  createUser,
-  deleteUser,
-  updateUser,
-} from "@/lib/database/actions/user.actions";
 import { clerkClient } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
+import { createUser, deleteUser, updateUser } from "@/lib/actions/user.actions";
 
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
@@ -59,7 +55,6 @@ export async function POST(req: Request) {
   const { id } = evt.data;
   const eventType = evt.type;
 
-  // creating a user in the MONGODB whenever a clerk user is created
   if (eventType === "user.created") {
     const { id, email_addresses, image_url, first_name, last_name, username } =
       evt.data;
@@ -67,7 +62,7 @@ export async function POST(req: Request) {
     const user = {
       clerkId: id,
       email: email_addresses[0].email_address,
-      username: username!, // username can sometimes be null
+      username: username!,
       firstName: first_name,
       lastName: last_name,
       photo: image_url,
