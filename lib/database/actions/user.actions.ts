@@ -1,22 +1,23 @@
 "use server";
 
-import { handleError } from "@/lib/utils";
-import { CreateUserParams, UpdateUserParams } from "@/types";
-import { connectToDatabase } from "@/lib/database";
-import User from "../models/user.model";
 import { revalidatePath } from "next/cache";
 
-export const createUser = async (user: CreateUserParams) => {
+import { connectToDatabase } from "@/lib/database";
+import User from "../models/user.model";
+import { handleError } from "@/lib/utils";
+
+import { CreateUserParams, UpdateUserParams } from "@/types";
+
+export async function createUser(user: CreateUserParams) {
   try {
     await connectToDatabase();
 
     const newUser = await User.create(user);
-
     return JSON.parse(JSON.stringify(newUser));
   } catch (error) {
     handleError(error);
   }
-};
+}
 
 export async function getUserById(userId: string) {
   try {
