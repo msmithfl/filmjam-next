@@ -6,7 +6,7 @@ export default authMiddleware({
     "/",
     "/watch",
     "/jams",
-    "/jams/:id",
+    "/jam/:id",
     "/community",
     "/api/webhook/clerk",
   ],

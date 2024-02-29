@@ -82,4 +82,21 @@ body {
   .flex-between {
     @apply flex justify-between items-center;
   }
+
+  .bg-dotted-pattern {
+    background-image: url("/assets/images/dotted-pattern.png");
+  }
+
+  /* SHADCN OVERRIDES */
+  .select-field {
+    @apply w-full bg-gray-50 h-[54px] placeholder:text-gray-500 rounded-full px-5 py-3 border-none focus-visible:ring-transparent focus:ring-transparent !important;
+  }
+
+  .input-field {
+    @apply bg-gray-50 h-[54px] focus-visible:ring-offset-0 placeholder:text-gray-500 rounded-full px-4 py-3 border-none focus-visible:ring-transparent !important;
+  }
+
+  .textarea {
+    @apply bg-gray-50 flex flex-1 placeholder:text-gray-500 px-5 py-3 border-none focus-visible:ring-transparent !important;
+  }
 }

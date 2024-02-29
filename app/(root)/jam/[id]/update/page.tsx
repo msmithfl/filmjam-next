@@ -11,11 +11,11 @@ const UpdateJam = () => {
     <>
       <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10">
         <h3 className="wrapper font-bold text-[28px] leading-[36px] md:text-[36px] md:leading-[44px] text-center sm:text-left">
-          Create Jam
+          Update Jam
         </h3>
       </section>
       <div className="wrapper my-8">
-        <JamForm userId={userId} type="Create" />
+        <JamForm userId={userId} type="Update" />
       </div>
     </>
   );

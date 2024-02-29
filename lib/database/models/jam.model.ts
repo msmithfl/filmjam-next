@@ -4,6 +4,7 @@ export interface IJam extends Document {
   _id: string;
   title: string;
   desc?: string;
+  genre: string;
   createdAt: Date;
   imageUrl: string;
   startDateTime: Date;
@@ -16,6 +17,7 @@ export interface IJam extends Document {
 const JamSchema = new Schema({
   title: { type: String, required: true },
   desc: { type: String },
+  genre: { type: String },
   createdAt: { type: Date, default: Date.now },
   imageUrl: { type: String, required: true },
   startDateTime: { type: Date, default: Date.now },
